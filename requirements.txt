@@ -1,0 +1,10 @@
+tensorflow==2.19.0
+keras==3.12.1
+opencv-python-headless
+transformers
+torch
+numpy
+pandas
+matplotlib
+scikit-learn
+Pillow

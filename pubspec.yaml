@@ -1,0 +1,39 @@
+name: tomleafvision_app
+description: A Flutter app for tomato leaf disease detection using Hugging Face API
+
+publish_to: 'none' # Remove this line if you want to publish
+
+version: 1.0.0+1
+
+environment:
+sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+flutter:
+sdk: flutter
+
+# UI
+
+cupertino_icons: ^1.0.6
+
+# API calls
+
+http: ^1.2.0
+
+# Camera / Gallery
+
+image_picker: ^1.0.4
+
+dev_dependencies:
+flutter_test:
+sdk: flutter
+
+flutter_lints: ^3.0.0
+
+flutter:
+uses-material-design: true
+
+# If you want to add images later
+
+assets:
+- assets/

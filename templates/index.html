@@ -1,0 +1,136 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TomLeafVision - Tomato Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <h1>TomLeafVision</h1>
+            </div>
+            <p class="tagline">Early Disease Detection for Tomato Crops</p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h2>Upload Tomato Leaf Image</h2>
+                    <p>Upload a clear photo of the tomato leaf for disease detection</p>
+                    
+                    <div class="file-input-container">
+                        <input type="file" id="file-input" accept="image/*" capture="environment">
+                        <label for="file-input" class="file-label">
+                            <i class="fas fa-camera"></i> Choose Image
+                        </label>
+                    </div>
+                    
+                    <div class="or-divider">OR</div>
+                    
+                    <button id="capture-btn" class="capture-btn">
+                        <i class="fas fa-camera-retro"></i> Take Photo
+                    </button>
+                    
+                    <div id="preview-container" class="preview-container hidden">
+                        <h3>Preview:</h3>
+                        <img id="image-preview" src="#" alt="Preview">
+                        <button id="analyze-btn" class="analyze-btn">
+                            <i class="fas fa-search"></i> Analyze Disease
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Section -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Analyzing image...</p>
+                <p class="small">This may take a few seconds</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" class="results hidden">
+                <div class="result-header">
+                    <h2><i class="fas fa-clipboard-check"></i> Analysis Results</h2>
+                </div>
+                
+                <div class="result-content">
+                    <div class="result-image">
+                        <img id="result-image" src="#" alt="Analyzed leaf">
+                    </div>
+                    
+                    <div class="result-details">
+                        <div class="disease-badge" id="disease-badge">
+                            <span id="disease-name"></span>
+                        </div>
+                        
+                        <div class="confidence-meter">
+                            <div class="meter-label">
+                                <span>Confidence:</span>
+                                <span id="confidence-value"></span>
+                            </div>
+                            <div class="meter-bar">
+                                <div id="confidence-bar" class="meter-fill"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-section">
+                            <div class="info-tabs">
+                                <button class="tab-btn active" data-tab="causes">Causes</button>
+                                <button class="tab-btn" data-tab="symptoms">Symptoms</button>
+                                <button class="tab-btn" data-tab="prevention">Prevention</button>
+                                <button class="tab-btn" data-tab="treatment">Treatment</button>
+                            </div>
+                            
+                            <div class="tab-content active" id="causes-tab">
+                                <p id="causes-text"></p>
+                            </div>
+                            
+                            <div class="tab-content" id="symptoms-tab">
+                                <p id="symptoms-text"></p>
+                            </div>
+                            
+                            <div class="tab-content" id="prevention-tab">
+                                <ul id="prevention-list"></ul>
+                            </div>
+                            
+                            <div class="tab-content" id="treatment-tab">
+                                <ul id="treatment-list"></ul>
+                            </div>
+                        </div>
+                        
+                        <div class="severity-info">
+                            <strong>Severity:</strong> <span id="severity"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="result-actions">
+                    <button id="new-analysis-btn" class="new-analysis-btn">
+                        <i class="fas fa-redo"></i> New Analysis
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Group No: RD25CSE727 | Guide: Mr. Nitin Goyal</p>
+            <p> Urvashi (2202310100109) | Saumya Agrawal (2202310100088) |Ritu Arya (2202310100082) | Riya (2202310100083)</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
