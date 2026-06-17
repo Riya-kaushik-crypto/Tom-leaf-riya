@@ -12,41 +12,5 @@ python_version: 3.10.0
 
 TomLeafVision
 
-TomLeafVision is a web-based application that helps identify common tomato leaf diseases from an uploaded image. The project uses deep learning to classify tomato leaves into different disease categories and provides useful information about symptoms, treatment, and prevention.
-
-The application was built to demonstrate the practical use of computer vision and machine learning in agriculture. Farmers, students, and researchers can use it to quickly analyze tomato leaf conditions and receive basic disease-related guidance.
-
-Features
-Upload a tomato leaf image through a simple web interface
-Detects Early Blight, Late Blight, and Healthy leaves
-Validates whether the uploaded image is actually a tomato leaf
-Checks image quality before making predictions
-Displays prediction confidence scores
-Provides disease symptoms and treatment suggestions
-Shows preventive measures for better crop health
-Technologies Used
-Python
-TensorFlow / Keras
-MobileNetV2
-OpenCV
-PyTorch
-OpenAI CLIP
-Hugging Face Transformers
-Gradio
-NumPy
-How It Works
-The user uploads an image of a tomato leaf.
-The system checks image quality, including brightness and blur.
-A CLIP-based validation step verifies that the image contains a tomato leaf.
-The trained MobileNetV2 model predicts the disease category.
-The application generates a report containing:
-Predicted disease
-Confidence score
-Severity level
-Symptoms
-Treatment recommendations
-Prevention tips
-Detectable Classes
-Early Blight
-Late Blight
+TomLeafVision is a machine learning–based web application developed to detect diseases in tomato leaves using image classification techniques. The system combines a MobileNetV2 deep learning model for disease prediction with CLIP-based image validation to ensure that only tomato leaf images are analyzed. Before making a prediction, the application also performs image quality checks such as brightness and blur detection to improve reliability. After processing the image, the system generates a detailed diagnosis report that includes the predicted disease, confidence score, severity level, symptoms, treatment recommendations, and preventive measures. The project was built using Python, TensorFlow, OpenCV, PyTorch, Hugging Face Transformers, and Gradio, demonstrating the practical application of artificial intelligence and computer vision in agriculture.
 Healthy
